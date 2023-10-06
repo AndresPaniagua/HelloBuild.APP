@@ -1,5 +1,29 @@
-import React from 'react'
+import React from "react";
+
+import Linkedin from "../assets/images/linkedIn-Icon.png";
+import GitHub from "../assets/images/github-Icon.png";
+import "../styles/footer.css";
 
 export default function Footer() {
-    return <div>Footer...</div>
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="rights-container">
+          <p>&copy; {new Date().getFullYear()} Todos los derechos reservados</p>
+        </div>
+        <div className="name-container">
+          <p>Andrés Paniagua - Entrance test</p>
+        </div>
+        <div className="logo-container">
+          <a href="https://www.linkedin.com/in/andres-felipe-paniagua-lema/" target="_blank" rel="noopener noreferrer">
+            <img src={Linkedin} alt="LinkedIn Logo" className="linkedin-logo" />
+          </a>
+
+          <a href="https://github.com/AndresPaniagua" target="_blank" rel="noopener noreferrer">
+            <img src={GitHub} alt="LinkedIn Logo" className="linkedin-logo" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
 }

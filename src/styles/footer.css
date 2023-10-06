@@ -1,0 +1,44 @@
+.footer {
+  background-color: #10d49a;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo-container {
+    padding-right: 5vw;
+}
+
+.logo-container > a {
+    margin-right: 20px;
+}
+
+.linkedin-logo {
+  width: 50px;
+}
+
+.name-container p {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.rights-container {
+    padding-left: 5vw;
+}
+
+.rights-container p {
+  font-size: 14px;
+  color: white;
+}
+
+/* Estilos para el enlace de LinkedIn */
+.linkedin-logo:hover {
+  opacity: 0.8; /* Cambia la opacidad al pasar el cursor sobre el logo */
+}
