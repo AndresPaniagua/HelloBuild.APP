@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="rights-container">
-          <p>&copy; {new Date().getFullYear()} Todos los derechos reservados</p>
+          <p>&copy; {new Date().getFullYear()} All rights reserved</p>
         </div>
         <div className="name-container">
           <p>Andrés Paniagua - Entrance test</p>

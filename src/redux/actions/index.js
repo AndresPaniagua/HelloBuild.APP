@@ -1,4 +1,15 @@
-import { SAVE_USER, IS_LOOGED, SHOW_LIST, TOKEN, REPOSITORY_LIST, FAV_REPOSITORY_LIST, GIT_LOGIN } from "../types";
+import {
+  SAVE_USER,
+  IS_LOOGED,
+  SHOW_LIST,
+  TOKEN,
+  REPOSITORY_LIST,
+  FAV_REPOSITORY_LIST,
+  GIT_LOGIN,
+  SHOW_PROFILE,
+  MY_SELECTED_REPOS_LIST,
+  SHOW_SELECTED,
+} from "../types";
 
 export const saveUser = (payload) => ({
   type: SAVE_USER,
@@ -15,6 +26,16 @@ export const showList = (payload) => ({
   payload,
 });
 
+export const showProfile = (payload) => ({
+  type: SHOW_PROFILE,
+  payload,
+});
+
+export const showSelected = (payload) => ({
+  type: SHOW_SELECTED,
+  payload,
+});
+
 export const saveToken = (payload) => ({
   type: TOKEN,
   payload,
@@ -27,6 +48,11 @@ export const reposList = (payload) => ({
 
 export const favReposList = (payload) => ({
   type: FAV_REPOSITORY_LIST,
+  payload,
+});
+
+export const mySelectedReposList = (payload) => ({
+  type: MY_SELECTED_REPOS_LIST,
   payload,
 });
 

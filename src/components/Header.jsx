@@ -1,7 +1,18 @@
 import React from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
-import { changeLog, showList, saveToken, saveUser } from "../redux/actions";
+import {
+  changeLog,
+  showList,
+  saveToken,
+  saveUser,
+  favReposList,
+  reposList,
+  changeGitLogin,
+  showProfile,
+  showSelected,
+  mySelectedReposList,
+} from "../redux/actions";
 
 import logo from "../assets/images/LogoHelloBuild.jpg";
 import loginIcon from "../assets/images/login-Icon.png";
@@ -14,20 +25,48 @@ const Header = ({ user, isLogged }) => {
   const handleLogoutClick = () => {
     dispatch(changeLog(false));
     dispatch(showList(false));
-    dispatch(saveToken(null));
-    dispatch(saveUser({
-      email: null,
-      pass: null
-    }));
-  }
+    dispatch(
+      saveToken({
+        token: null,
+        username: null,
+      })
+    );
+    dispatch(
+      saveUser({
+        email: null,
+        pass: null,
+      })
+    );
+    dispatch(favReposList([]));
+    dispatch(reposList([]));
+    dispatch(mySelectedReposList([]));
+    dispatch(changeGitLogin(false));
+    dispatch(showSelected(false));
+    dispatch(showProfile(false));
+  };
 
   const handleMyRepos = () => {
     dispatch(showList(true));
-  }
+    dispatch(showProfile(false));
+    dispatch(showSelected(false));
+  };
 
-  const handleMyFavRepos = () => {
+  const handleFavRepos = () => {
     dispatch(showList(false));
-  }
+    dispatch(showProfile(false));
+    dispatch(showSelected(true));
+  };
+
+  const handleStarredRepos = () => {
+    dispatch(showList(false));
+    dispatch(showProfile(false));
+    dispatch(showSelected(false));
+  };
+
+  const handleMyProfile = () => {
+    dispatch(showList(false));
+    dispatch(showProfile(true));
+  };
 
   return (
     <header className="header">
@@ -35,7 +74,7 @@ const Header = ({ user, isLogged }) => {
         <div className="logo-container">
           <div className="logoNav">
             <img src={logo} alt="Logo" className="logo" />
-            <h1 className="app-title">My App</h1>
+            <h1 className="app-title">HB - Test App</h1>
           </div>
 
           <div className="linkNav">
@@ -50,8 +89,15 @@ const Header = ({ user, isLogged }) => {
                 )}
                 {isLogged && (
                   <li className="nav-item">
-                    <a onClick={handleMyFavRepos} className="nav-link">
-                      My Fav
+                    <a onClick={handleStarredRepos} className="nav-link">
+                      Starred Repos
+                    </a>
+                  </li>
+                )}
+                {isLogged && (
+                  <li className="nav-item">
+                    <a onClick={handleFavRepos} className="nav-link">
+                      My Favorites Repos
                     </a>
                   </li>
                 )}
@@ -63,10 +109,24 @@ const Header = ({ user, isLogged }) => {
         <div className="login">
           <div className="nav-item">
             {isLogged ? (
-              <button onClick={handleLogoutClick} className="logout-button">
-                <img src={logoutIcon} alt="Icono" className="button-icon" />
-                <span className="button-text">Logout</span>
-              </button>
+              <div className="login-navItem">
+                <nav className="nav">
+                  <ul className="nav-list">
+                    {isLogged && (
+                      <li className="nav-item">
+                        <a onClick={handleMyProfile} className="nav-link">
+                          My profile
+                        </a>
+                      </li>
+                    )}
+                  </ul>
+                </nav>
+
+                <button onClick={handleLogoutClick} className="logout-button">
+                  <img src={logoutIcon} alt="Icono" className="button-icon" />
+                  <span className="button-text">Logout</span>
+                </button>
+              </div>
             ) : (
               <button className="login-button">
                 <img src={loginIcon} alt="Icono" className="button-icon" />
@@ -78,12 +138,12 @@ const Header = ({ user, isLogged }) => {
       </div>
     </header>
   );
-}
+};
 
 const mapStateToProps = (state) => {
   return {
     user: state.user,
-    isLogged: state.isLogged
+    isLogged: state.isLogged,
   };
 };
 

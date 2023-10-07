@@ -1,8 +1,7 @@
-/* Estilos para el encabezado */
 .header {
   display: flex;
   align-items: center;
-  background-color: #10d49a;
+  background-color: #17d299;
   color: white;
   min-height: 5vh;
   max-height: 5vh;
@@ -17,7 +16,6 @@
   width: 100vw;
 }
 
-/* Estilos para el contenedor del logo y el título de la aplicación */
 .logo-container {
   display: flex;
   align-items: center;
@@ -46,7 +44,6 @@
   margin: 0;
 }
 
-/* Estilos para la barra de navegación */
 .nav-list {
   list-style: none;
   padding: 0;
@@ -70,7 +67,6 @@
   padding-top: 5px;
 }
 
-/* Estilos para los botones de inicio de sesión y cierre de sesión */
 .login-button,
 .logout-button {
   background-color: transparent;
@@ -105,4 +101,8 @@
 .nav-link:visited {
   color: white;
   text-decoration: none;
+}
+
+.login-navItem {
+  display: flex;
 }

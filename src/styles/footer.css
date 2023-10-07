@@ -1,5 +1,5 @@
 .footer {
-  background-color: #10d49a;
+  background-color: #17d299;
   color: white;
   padding: 20px 0;
   text-align: center;
@@ -38,7 +38,6 @@
   color: white;
 }
 
-/* Estilos para el enlace de LinkedIn */
 .linkedin-logo:hover {
-  opacity: 0.8; /* Cambia la opacidad al pasar el cursor sobre el logo */
+  opacity: 0.8;
 }

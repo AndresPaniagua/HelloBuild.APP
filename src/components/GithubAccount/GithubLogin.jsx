@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { useDispatch, useSelector } from "react-redux";
 import { getRepositories, getFavRepositories } from "../../utils/actions";
 import { showLoader, closeLoader } from '../../utils/helper';
-import { reposList, favReposList, showList, changeGitLogin } from "../../redux/actions";
+import { reposList, favReposList, showList, changeGitLogin, saveToken } from "../../redux/actions";
 
 import GithubIcon from "../../assets/images/github-Icon.png";
 import '../../styles/signin.css';
@@ -51,13 +51,14 @@ const GithubLogin = () => {
         }
 
         dispatch(reposList(response.data));
+        dispatch(saveToken({ token: data.personalAccessToken, username: data.username }));
 
         const responseFav = await getFavRepositories(userData.email, userData.pass, data);
 
-        if (responseFav.statusResponse){
+        if (responseFav.statusResponse) {
             dispatch(favReposList(responseFav.data));
         }
-        
+
         dispatch(changeGitLogin(true));
         dispatch(showList(true));
 

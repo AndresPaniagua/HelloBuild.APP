@@ -11,9 +11,15 @@ const initialState = {
   isLogged: false,
   showList: false,
   gitLogin: false,
-  token: null, 
+  showProfile: false,
+  showSelected: false,
+  token: {
+    token: null,
+    username: null
+  }, 
   repositoryList: [], 
-  favRepositoryList: []
+  favRepositoryList: [],
+  MySelectedFavRepos: []
 };
 
 export const store = createStore(reducer, initialState, applyMiddleware(reduxThunk));
