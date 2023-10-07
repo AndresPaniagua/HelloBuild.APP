@@ -16,11 +16,11 @@ export default function Footer() {
         </div>
         <div className="logo-container">
           <a href="https://www.linkedin.com/in/andres-felipe-paniagua-lema/" target="_blank" rel="noopener noreferrer">
-            <img src={Linkedin} alt="LinkedIn Logo" className="linkedin-logo" />
+            <img src={Linkedin} alt="LinkedIn Logo" />
           </a>
 
           <a href="https://github.com/AndresPaniagua" target="_blank" rel="noopener noreferrer">
-            <img src={GitHub} alt="LinkedIn Logo" className="linkedin-logo" />
+            <img src={GitHub} alt="Github Logo" />
           </a>
         </div>
       </div>

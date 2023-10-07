@@ -1,20 +1,19 @@
 import React, { useState } from "react";
+import { connect } from 'react-redux';
+import { useDispatch } from "react-redux";
+import { changeLog } from "../redux/actions";
 
 import logo from "../assets/images/LogoHelloBuild.jpg";
 import loginIcon from "../assets/images/login-Icon.png";
 import logoutIcon from "../assets/images/logout-Icon.jpg";
 import "../styles/header.css";
 
-export default function Header() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleLoginClick = () => {
-    setIsLoggedIn(true);
-  };
+const Header = ({ user, isLogged }) => {
+  const dispatch = useDispatch();
 
   const handleLogoutClick = () => {
-    setIsLoggedIn(false);
-  };
+    dispatch(changeLog(false));
+  }
 
   return (
     <header className="header">
@@ -28,14 +27,14 @@ export default function Header() {
           <div className="linkNav">
             <nav className="nav">
               <ul className="nav-list">
-                {isLoggedIn && (
+                {isLogged && (
                   <li className="nav-item">
                     <a href="/my-repositories" className="nav-link">
                       My Repositories
                     </a>
                   </li>
                 )}
-                {isLoggedIn && (
+                {isLogged && (
                   <li className="nav-item">
                     <a href="/my-fav" className="nav-link">
                       My Fav
@@ -49,13 +48,13 @@ export default function Header() {
 
         <div className="login">
           <div className="nav-item">
-            {isLoggedIn ? (
+            {isLogged ? (
               <button onClick={handleLogoutClick} className="logout-button">
                 <img src={logoutIcon} alt="Icono" className="button-icon" />
                 <span className="button-text">Logout</span>
               </button>
             ) : (
-              <button onClick={handleLoginClick} className="login-button">
+              <button className="login-button">
                 <img src={loginIcon} alt="Icono" className="button-icon" />
                 <span className="button-text">Login</span>
               </button>
@@ -66,3 +65,12 @@ export default function Header() {
     </header>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+    isLogged: state.isLogged
+  };
+};
+
+export default connect(mapStateToProps)(Header);

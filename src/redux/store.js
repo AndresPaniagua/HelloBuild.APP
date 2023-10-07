@@ -5,9 +5,9 @@ import reducer from "./reducers";
 
 const initialState = {
   user: {
-    username: null,
-    password: null,
+    email: null,
   },
+  isLogged: false
 };
 
 export const store = createStore(reducer, initialState, applyMiddleware(reduxThunk));
