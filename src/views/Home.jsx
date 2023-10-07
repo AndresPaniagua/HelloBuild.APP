@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import SignUpForm from "../components/SignUp/SignUpForm";
 import SignInForm from "../components/SignIn/SignInForm";
-import GithubLogin from "../components/GithubAccount/GithubLogin";
+import GithubHome from "../components/Github/GithubHome";
 import { useState } from "react";
 
 const Home = ({ user, isLogged }) => {
@@ -13,9 +13,9 @@ const Home = ({ user, isLogged }) => {
   }
 
   return (
-    <div>
+    <div style={{height: "90vh"}}>
       {isLogged ? (
-        <GithubLogin />
+        <GithubHome />
       ) : (
         showSignIn ? (
           <SignInForm onCreateAccount={handleSigninShow} />

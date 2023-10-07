@@ -37,3 +37,12 @@
     transform: rotate(360deg);
   }
 }
+
+input {
+  background-color: white !important;
+  color: black !important;
+}
+
+button {
+  border: none !important;
+}

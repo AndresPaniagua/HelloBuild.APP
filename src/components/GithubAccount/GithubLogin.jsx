@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import { connect } from 'react-redux';
 import { useDispatch, useSelector } from "react-redux";
-import { getRepositories } from "../../utils/actions";
+import { getRepositories, getFavRepositories } from "../../utils/actions";
 import { showLoader, closeLoader } from '../../utils/helper';
+import { reposList, favReposList, showList, changeGitLogin } from "../../redux/actions";
 
-const GithubLogin = ({ user, isLogged, showList }) => {
+import GithubIcon from "../../assets/images/github-Icon.png";
+import '../../styles/signin.css';
+import '../../styles/gitHubLogin.css';
+
+const GithubLogin = () => {
     const [dataGit, setDataGit] = useState({
         username: "",
         token: ""
@@ -33,7 +38,28 @@ const GithubLogin = ({ user, isLogged, showList }) => {
         showLoader("Loading...");
 
         const response = await getRepositories(userData.email, userData.pass, data);
-        console.log(response);
+
+        if (!response.statusResponse) {
+            closeLoader();
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...!',
+                text: 'Something has gone wrong, please try again later!',
+                timer: 15000
+            });
+            return;
+        }
+
+        dispatch(reposList(response.data));
+
+        const responseFav = await getFavRepositories(userData.email, userData.pass, data);
+
+        if (responseFav.statusResponse){
+            dispatch(favReposList(responseFav.data));
+        }
+        
+        dispatch(changeGitLogin(true));
+        dispatch(showList(true));
 
         closeLoader();
     }
@@ -43,8 +69,11 @@ const GithubLogin = ({ user, isLogged, showList }) => {
             <section className="sign-in">
                 <div className="container">
                     <div className="signin-content">
-                        <div className="signin-form">
-                            <h2 className="form-title">Sign In to GitHub</h2>
+                        <div className="git-form">
+                            <div className="formGit-title">
+                                <img src={GithubIcon} alt="GitHub Icon" className="gitIcon" />
+                                <h2 className="formGit-title">Sign In to GitHub</h2>
+                            </div>
                             <form method="POST" className="register-form" id="login-form">
                                 <div className="form-group">
                                     <label htmlFor="your_name">
@@ -72,9 +101,6 @@ const GithubLogin = ({ user, isLogged, showList }) => {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.user,
-        isLogged: state.isLogged,
-        showList: state.showList
     };
 };
 

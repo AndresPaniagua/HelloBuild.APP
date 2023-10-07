@@ -1,0 +1,63 @@
+.card-datatable {
+    width: 70vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.card {
+    background: var(--surface-card);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.p-datatable.p-component.p-datatable-responsive-scroll {
+    box-shadow: 6px 15px 24.83px 6.17px #10d49a;
+    border-radius: 10px;
+}
+
+.p-datatable-wrapper {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.p-paginator-bottom.p-paginator.p-component {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: #abe6d4;
+    border-color: #abe6d4;
+    color: #151515;
+}
+
+.p-paginator {
+    color: #67eec5;
+}
+
+.p-paginator-next,
+.p-paginator .p-paginator-last,
+.p-paginator .p-paginator-pages .p-paginator-page,
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-last {
+    color: #2dd6a4;
+}
+
+.p-datatable .p-datatable-thead>tr>th {
+    color: #2dd6a4;
+}
+
+.p-datatable .p-column-header-content {
+    justify-content: center;
+}
+
+.p-datatable .p-sortable-column:not(.p-highlight):not(.p-sortable-disabled):hover {
+    background: #414b5a;
+}

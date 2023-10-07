@@ -1,0 +1,15 @@
+.git-form {
+    margin-right: 50px;
+    margin-left: 135px;
+    width: 50%;
+    overflow: hidden;
+}
+
+.formGit-title {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.gitIcon {
+    width: 8vw;
+}
