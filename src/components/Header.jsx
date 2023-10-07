@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from 'react-redux';
 import { useDispatch } from "react-redux";
-import { changeLog } from "../redux/actions";
+import { changeLog, showList, saveToken, saveUser } from "../redux/actions";
 
 import logo from "../assets/images/LogoHelloBuild.jpg";
 import loginIcon from "../assets/images/login-Icon.png";
@@ -13,6 +13,20 @@ const Header = ({ user, isLogged }) => {
 
   const handleLogoutClick = () => {
     dispatch(changeLog(false));
+    dispatch(showList(false));
+    dispatch(saveToken(null));
+    dispatch(saveUser({
+      email: null,
+      pass: null
+    }));
+  }
+
+  const handleMyRepos = () => {
+    dispatch(showList(true));
+  }
+
+  const handleMyFavRepos = () => {
+    dispatch(showList(false));
   }
 
   return (
@@ -29,14 +43,14 @@ const Header = ({ user, isLogged }) => {
               <ul className="nav-list">
                 {isLogged && (
                   <li className="nav-item">
-                    <a href="/my-repositories" className="nav-link">
+                    <a onClick={handleMyRepos} className="nav-link">
                       My Repositories
                     </a>
                   </li>
                 )}
                 {isLogged && (
                   <li className="nav-item">
-                    <a href="/my-fav" className="nav-link">
+                    <a onClick={handleMyFavRepos} className="nav-link">
                       My Fav
                     </a>
                   </li>

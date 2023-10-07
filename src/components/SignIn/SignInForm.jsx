@@ -86,7 +86,7 @@ export default function SignInForm({ onCreateAccount }) {
     }
 
     dispatch(changeLog(true));
-    dispatch(saveUser({ email: data.email }));
+    dispatch(saveUser({ email: data.email, pass: data.password }));
   }
 
   return (

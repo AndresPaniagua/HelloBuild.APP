@@ -1,4 +1,4 @@
-import { SAVE_USER, IS_LOOGED } from "../types";
+import { SAVE_USER, IS_LOOGED, SHOW_LIST, TOKEN } from "../types";
 
 export default (state, action) => {
   switch (action.type) {
@@ -11,6 +11,16 @@ export default (state, action) => {
       return {
         ...state,
         isLogged: action.payload,
+      };
+    case SHOW_LIST:
+      return {
+        ...state,
+        showList: action.payload,
+      };
+    case TOKEN:
+      return {
+        ...state,
+        token: action.payload,
       };
     default:
       return state;

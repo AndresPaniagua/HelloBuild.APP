@@ -1,9 +1,11 @@
 import React from "react";
+import { connect } from 'react-redux';
 import SignUpForm from "../components/SignUp/SignUpForm";
 import SignInForm from "../components/SignIn/SignInForm";
+import GithubLogin from "../components/GithubAccount/GithubLogin";
 import { useState } from "react";
 
-export default function Home() {
+const Home = ({ user, isLogged }) => {
   const [showSignIn, SetShowSignIn] = useState(true);
 
   const handleSigninShow = () => {
@@ -12,11 +14,24 @@ export default function Home() {
 
   return (
     <div>
-      {showSignIn ? (
-        <SignInForm onCreateAccount={handleSigninShow} />
+      {isLogged ? (
+        <GithubLogin />
       ) : (
-        <SignUpForm onFinishRegister={handleSigninShow} />
+        showSignIn ? (
+          <SignInForm onCreateAccount={handleSigninShow} />
+        ) : (
+          <SignUpForm onFinishRegister={handleSigninShow} />
+        )
       )}
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+    isLogged: state.isLogged
+  };
+};
+
+export default connect(mapStateToProps)(Home);
