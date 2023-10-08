@@ -7,16 +7,16 @@ Hello Build Test is a ReactJS web application that allows users to efficiently m
 To run this application on your local environment, follow these steps:
 
 1. Clone the repository to your machine:
-git clone [CLONE GIT](https://github.com/AndresPaniagua/HelloBuild.APP.git)
+### `git clone https://github.com/AndresPaniagua/HelloBuild.APP.git`
 
 2. Navigate to the project directory:
-cd HelloBuild.APP
+### `cd HelloBuild.APP`
 
 3. Install dependencies using npm:
-npm install
+### `npm install`
 
 4. Start the application:
-npm start
+### `npm start`
 
 5. Open your browser and go to [http://localhost:3000](http://localhost:3000) to see the application in action.
 
