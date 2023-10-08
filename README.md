@@ -53,7 +53,7 @@ This project is considered complete, and no further updates will be made.
 For any questions or comments, feel free to contact the lead developer:
 
 - Name: Andres Paniagua
-- GitHub: [My profile]((https://github.com/AndresPaniagua))
+- GitHub: [My profile](https://github.com/AndresPaniagua)
 
 ## Release Notes
 - ReactJS version 17 used in the project.
