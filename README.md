@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Hello Build Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
+Hello Build Test is a ReactJS web application that allows users to efficiently manage their GitHub repositories. The application provides secure authentication, a list of repositories, favorites, and detailed project exploration, all designed to facilitate interaction with GitHub repositories.
 
-## Available Scripts
+## Installation
+To run this application on your local environment, follow these steps:
 
-In the project directory, you can run:
+1. Clone the repository to your machine:
+git clone [CLONE GIT](https://github.com/AndresPaniagua/HelloBuild.APP.git)
 
-### `npm start`
+2. Navigate to the project directory:
+cd HelloBuild.APP
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Install dependencies using npm:
+npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. Start the application:
+npm start
 
-### `npm test`
+5. Open your browser and go to [http://localhost:3000](http://localhost:3000) to see the application in action.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
+Once you've started the application, you can follow these steps:
 
-### `npm run build`
+- Register and log in.
+- Provide your GitHub username and GitHub access token for secure authentication.
+- Explore your repositories and use the favorites and search features to manage your GitHub projects.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
+- Secure authentication with GitHub access token.
+- List of repositories with the option to mark them as favorites.
+- Detailed exploration of repositories with a direct link to GitHub.
+- Repository filtering by name.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
+- ReactJS 17
+- Sweetalert2
+- react-toast
+- Jest (unit testing)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contribution
+This project is intended for demonstration purposes, and external contributions are not accepted.
 
-### `npm run eject`
+## Credits
+This project was created as part of an entrance test for the Hello Build company.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Status
+This project is considered complete, and no further updates will be made.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contact
+For any questions or comments, feel free to contact the lead developer:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Name: Andres Paniagua
+- GitHub: [My profile]((https://github.com/AndresPaniagua))
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Release Notes
+- ReactJS version 17 used in the project.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
