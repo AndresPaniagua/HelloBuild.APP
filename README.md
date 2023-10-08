@@ -23,7 +23,8 @@ To run this application on your local environment, follow these steps:
 ## Usage
 Once you've started the application, you can follow these steps:
 
-- Register and log in.
+- Sign up
+- Sign In
 - Provide your GitHub username and GitHub access token for secure authentication.
 - Explore your repositories and use the favorites and search features to manage your GitHub projects.
 
