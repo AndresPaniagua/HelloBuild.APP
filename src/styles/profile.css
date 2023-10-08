@@ -26,8 +26,9 @@
 }
 
 .userPicture > img {
-  width: 20vw;
+  width: 15vw;
   max-width: 60%;
+  min-width: 50%;
 }
 
 .userInfo {

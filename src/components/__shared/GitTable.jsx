@@ -8,7 +8,7 @@ import { Tag } from "primereact/tag";
 import { FilterMatchMode } from "primereact/api";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "react-toastify/dist/ReactToastify.min.css";
 import "primereact/resources/themes/bootstrap4-dark-purple/theme.css";

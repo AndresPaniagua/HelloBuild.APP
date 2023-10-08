@@ -153,18 +153,6 @@ export default function SignUpForm({ onFinishRegister }) {
                   <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" value={userData.repeatPassword} onChange={(e) => handlePasswordChanges(e)} />
                 </div>
                 <span style={{color:'red'}}>{error}</span>
-                <div className="form-group">
-                  <input type="checkbox" name="agree-term" id="agree-term" className="agree-term" />
-                  <label htmlFor="agree-term" className="label-agree-term">
-                    <span>
-                      <span></span>
-                    </span>
-                    I agree all statements in{" "}
-                    <a href="#" className="term-service">
-                      Terms of service
-                    </a>
-                  </label>
-                </div>
                 <div className="form-group form-button">
                   <button type="button" name="signup" id="signup" className="form-submit" onClick={sendRegisterUser} >Register</button>
                 </div>

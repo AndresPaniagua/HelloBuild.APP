@@ -96,7 +96,7 @@ export default function SignInForm({ onCreateAccount }) {
           <div className="signin-content">
             <div className="signin-image">
               <figure>
-                <img src={SignInimage} alt="sing up image" />
+                <img src={SignInimage} alt="sing up" />
               </figure>
               <a onClick={handleCreateAccount} className="signup-image-link">
                 Create an account

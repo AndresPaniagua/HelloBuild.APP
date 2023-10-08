@@ -56,7 +56,7 @@ export default (state, action) => {
       };
     case MY_SELECTED_REPOS_LIST:
       const name = action.payload.name;
-      const exists = state.MySelectedFavRepos.some((ele) => ele.name == name);
+      const exists = state.MySelectedFavRepos.some((ele) => ele.name === name);
 
       if (exists) {
         toast.warn("It seems you already have this repository in your favorites!", {
