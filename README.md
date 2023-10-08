@@ -20,6 +20,8 @@ To run this application on your local environment, follow these steps:
 
 5. Open your browser and go to [http://localhost:3000](http://localhost:3000) to see the application in action.
 
+**Note:** To fully utilize this project, make sure the HelloBuild.API project is running and functioning correctly.
+
 ## Usage
 Once you've started the application, you can follow these steps:
 
