@@ -1,4 +1,6 @@
-# Hello Build Test
+# Hello Build Test APP
+
+**Note:** To fully utilize this project, make sure the HelloBuild.API project is running and functioning correctly.
 
 ## Project Description
 Hello Build Test is a ReactJS web application that allows users to efficiently manage their GitHub repositories. The application provides secure authentication, a list of repositories, favorites, and detailed project exploration, all designed to facilitate interaction with GitHub repositories.
